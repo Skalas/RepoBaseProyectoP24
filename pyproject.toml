@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "repobaseproyectop24"
+version = "0.1.0"
+description = ""
+authors = ["Miguel Angel Escalante Serrato <escala@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.2"
+pymongo = "^4.7.2"
+SQLAlchemy = "^2.0.30"
+neo4j = "^5.20.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

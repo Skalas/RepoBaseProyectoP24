@@ -1,0 +1,27 @@
+services:
+  pg:
+    image: postgres
+    container_name: ${PG_CONTAINER_NAME}_${ENV}
+    environment:
+      POSTGRES_DB: ${PGDATABASE}
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+    ports:
+      - "${PGPORT}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  mongo:
+    image: mongo
+    container_name:  ${MG_CONTAINER_NAME}_${ENV}
+    ports:
+      - "${MGPORT}:27017"
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  pgdata:
+  mongodata:
+
+networks:
+  docker1:
+    external: true
